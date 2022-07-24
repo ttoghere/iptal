@@ -1,3 +1,4 @@
+import 'package:crewinjobapplication/screens/screens_shelf.dart';
 import 'package:crewinjobapplication/widgets/widgets_shelf.dart';
 import 'package:flutter/material.dart';
 
@@ -30,18 +31,13 @@ class _AuthPageState extends State<AuthPage> {
               }
             },
           ),
+          bottom: const AuthTab(),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(children: const [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: AuthTab(),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-          ]),
+        body: const TabBarView(
+          children: [
+            RegisterPage(),
+            LoginPage(),
+          ],
         ),
       ),
     );

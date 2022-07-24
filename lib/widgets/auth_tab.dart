@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
-
-class AuthTab extends StatelessWidget {
+class AuthTab extends StatefulWidget implements PreferredSizeWidget {
   const AuthTab({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<AuthTab> createState() => _AuthTabState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(75);
+}
+
+class _AuthTabState extends State<AuthTab> {
+  @override
   Widget build(BuildContext context) {
     return Container(
+      margin:const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           color: Colors.grey, borderRadius: BorderRadius.circular(10)),
       child: Padding(
@@ -19,7 +27,7 @@ class AuthTab extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           labelColor: Colors.black,
-          unselectedLabelStyle: const TextStyle(color: Colors.white),
+          unselectedLabelColor: Colors.white,
           tabs: const [
             Tab(
               text: "Sign Up",

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AuthFormInput extends StatefulWidget {
   final String text;
   final bool isVisible;
-  AuthFormInput({
+ const AuthFormInput({
     Key? key,
     required this.text,
     this.isVisible = false,

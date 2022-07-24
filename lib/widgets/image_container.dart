@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ImageContainer extends StatelessWidget {
   final String imageRoute;
-  ImageContainer({
+ const ImageContainer({
     Key? key,
     required this.imageRoute,
   }) : super(key: key);
