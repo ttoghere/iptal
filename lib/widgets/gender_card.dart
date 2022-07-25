@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class GenderCard extends StatelessWidget {
   const GenderCard({
     Key? key,
@@ -32,7 +31,7 @@ class GenderCard extends StatelessWidget {
             color: Colors.blue[900],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(

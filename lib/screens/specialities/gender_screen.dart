@@ -42,13 +42,13 @@ class _GenderScreenState extends State<GenderScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 100,),
+            const SizedBox(height: 100,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal:20.0),
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.blue[900],padding: EdgeInsets.all(20)),
+                style: ElevatedButton.styleFrom(primary: Colors.blue[900],padding: const EdgeInsets.all(20)),
                 onPressed: () {},
-                child: Text("Continue"),
+                child: const Text("Continue"),
               ),
             ),
           ],
