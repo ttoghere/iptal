@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LengthPage extends StatefulWidget {
-  const LengthPage({Key? key}) : super(key: key);
+class WeightPage extends StatefulWidget {
+  const WeightPage({Key? key}) : super(key: key);
 
   @override
-  _LengthPageState createState() => _LengthPageState();
+  _WeightPageState createState() => _WeightPageState();
 }
 
-class _LengthPageState extends State<LengthPage> {
+class _WeightPageState extends State<WeightPage> {
   late ScrollController _scrollController;
   final int _itemCount = 100;
   int _cardPosition = 0;
@@ -95,7 +95,7 @@ class _LengthPageState extends State<LengthPage> {
                                   ),
                                   ListTile(
                                     title: Text(
-                                      (index + 120).toString(),
+                                      (index + 50).toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontSize: 30.0,

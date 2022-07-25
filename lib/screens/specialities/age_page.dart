@@ -15,7 +15,7 @@ class _AgePageState extends State<AgePage> {
   void _scrollListenerWithItemCount() {
     int itemCount = _itemCount;
     double scrollOffset = _scrollController.position.pixels;
-    double viewportHeight = _scrollController.position.viewportDimension / 2;
+    double viewportHeight = _scrollController.position.viewportDimension;
     double scrollRange = _scrollController.position.maxScrollExtent -
         _scrollController.position.minScrollExtent;
     int firstVisibleItemIndex =
@@ -53,51 +53,80 @@ class _AgePageState extends State<AgePage> {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: SizedBox(
-            height: 400,
-            child: Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      controller: _scrollController,
-                      itemCount: _itemCount,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Divider(
-                              thickness: 3,
-                              color: _cardPosition == index
-                                  ? Colors.grey[200]
-                                  : Colors.white,
-                            ),
-                            ListTile(
-                              title: Text(
-                                (index + 15).toString(),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "How old are you?",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                const SizedBox(
+                  height: 75,
+                ),
+                SizedBox(
+                  height: 400,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: ListView.builder(
+                          controller: _scrollController,
+                          itemCount: _itemCount,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                Divider(
+                                  thickness: 3,
                                   color: _cardPosition == index
-                                      ? Colors.black
-                                      : Colors.grey[200],
+                                      ? Colors.grey[200]
+                                      : Colors.white,
                                 ),
-                              ),
-                            ),
-                            Divider(
-                              thickness: 3,
-                              color: _cardPosition == index
-                                  ? Colors.grey[200]
-                                  : Colors.white,
-                            ),
-                          ],
-                        );
-                      },
-                    ),
+                                ListTile(
+                                  title: Text(
+                                    (index + 15).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: _cardPosition == index
+                                          ? Colors.black
+                                          : Colors.grey[200],
+                                    ),
+                                  ),
+                                ),
+                                Divider(
+                                  thickness: 3,
+                                  color: _cardPosition == index
+                                      ? Colors.grey[200]
+                                      : Colors.white,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 75,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Next",
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[900],
+                  ),
+                )
+              ],
             ),
           ),
         ),
